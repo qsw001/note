@@ -1,0 +1,55 @@
+import { ProTable } from "@ant-design/pro-components";
+
+const columns = [
+  {
+    title: "姓名",
+    dataIndex: "name",
+    width: 120,
+  },
+  {
+    title: "年龄",
+    dataIndex: "age",
+    sorter: true, // 排序
+    align: "center",
+    width: 80,
+  },
+  {
+    title: "备注（自动换行）",
+    dataIndex: "remark",
+    width: 200,
+    ellipsis: false, // 不省略
+    render: (_, row) => (
+      <div style={{ whiteSpace: "normal", wordBreak: "break-all" }}>
+        {row.remark}
+      </div>
+    ),
+  },
+];
+
+const data = [
+  {
+    id: 1,
+    name: "张三",
+    age: 18,
+    remark: "这是一个很长的备注，会自动换行展示，不会省略。",
+  },
+  {
+    id: 2,
+    name: "李四",
+    age: 20,
+    remark: "短备注。",
+  },
+];
+
+export default () => {
+  return (
+    <ProTable
+      columns={columns}
+      rowKey="id"
+      dataSource={data}
+      search={false}
+      className="small-table"
+      pagination={false}
+    />
+  );
+};
