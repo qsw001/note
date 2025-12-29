@@ -47,6 +47,15 @@ for a>10{
 ```
 如果用的是switch则不需要加break
 
+for循环的range形式可以遍历数组或切片，遍历时返回两个数据一个是元素的下标，另一个是元素的副本
+
+```
+这里面的a为对应的索引，b为副本，挡不需要时可以用_代替
+for a,b := range pow {
+
+}
+```
+
 ## 5. 函数
 
 最简单的格式如下
@@ -75,6 +84,15 @@ go中函数“地位”的体现主要在callback上面，我们假设一个函�
 func process(a,b int, done func(...) ...) int {
 
 } 
+```
+
+方法：方法是一类带特殊接收者的函数
+
+```
+这里Abs就是Vertex的一个方法
+func (v Vertex) Abs() float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
 ```
 
 ## 6. 数组和切片
