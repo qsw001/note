@@ -35,4 +35,7 @@ result = agent.invoke(
 )
 
 # 输出结果
-print(result["messages"])
+final_msg = result["messages"][-1].content
+print(final_msg)
+
+
