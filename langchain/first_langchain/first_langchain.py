@@ -37,5 +37,3 @@ result = agent.invoke(
 # 输出结果
 final_msg = result["messages"][-1].content
 print(final_msg)
-
-

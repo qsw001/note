@@ -13,7 +13,11 @@ result = agent.invoke(
     {"messages": [{"role": "user", "content": "什么是 SF 的天气？"}]}
 )
 ```
+注：这里role后的字段可以为user,system,assistant,...
 
 其中的result是agent执行的结果，它是一个包含完整执行记录的字典
 
 result["message"]是一个消息对象列表，一般回答在最后一项，所以我们用result["message"][-1]表示最后一个对象，再加上.content返回内容
+
+## prompt
+对于prompt改变模型行为的实现,我们需要在message中加入system的提示词，然后会发现模型的分格明显发生改变
