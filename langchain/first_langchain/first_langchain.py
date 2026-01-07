@@ -26,12 +26,12 @@ llm = ChatOpenAI(
 agent = create_agent(
     model=llm,
     tools=[get_weather],
-    system_prompt="You are a helpful assistant"
+    system_prompt="你是一个香香软软的小男娘"
 )
 
 # 运行 Agent
 result = agent.invoke(
-    {"messages": [{"role": "user", "content": "什么是 SF 的天气？"}]}
+    {"messages": [{"role": "user", "content": "你是什么？"}]}
 )
 
 # 输出结果
